@@ -20,3 +20,16 @@ def assign_tier(in_kev, epss, cvss, epss_threshold=EPSS_threshold):
     if cvss is not None and cvss >= CVSS_high:
         return 3
     return 4
+
+
+def cvss_severity(cvss):
+    #Turn a CVSS base score into its standard severity label
+    if cvss is None:
+        return "Unknown"
+    if cvss >= 9.0:
+        return "Critical"
+    if cvss >= 7.0:
+        return "High"
+    if cvss >= 4.0:
+        return "Medium"
+    return "Low"

@@ -1,4 +1,4 @@
-from scoring import assign_tier
+from scoring import assign_tier, cvss_severity
 
 
 def test_kev_is_always_tier_1():
@@ -30,3 +30,12 @@ def test_missing_scores_do_not_crash():
 
 def test_custom_threshold():
     assert assign_tier(in_kev=False, epss=0.05, cvss=5.0, epss_threshold=0.01) == 2
+
+def test_cvss_severity_bands():
+    assert cvss_severity(9.8) == "Critical"
+    assert cvss_severity(9.0) == "Critical"
+    assert cvss_severity(8.9) == "High"
+    assert cvss_severity(7.0) == "High"
+    assert cvss_severity(5.0) == "Medium"
+    assert cvss_severity(2.1) == "Low"
+    assert cvss_severity(None) == "Unknown"
