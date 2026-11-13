@@ -1,6 +1,10 @@
 #Downloadss the data KEVRank needs: CISA KEV, FIRST EPSS and NVD CVSS
-import requests
 
+import json
+import os
+import time
+
+import requests
 KEV_URL = "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json"
 
 
@@ -26,3 +30,66 @@ def fetch_epss(cves):
         for row in response.json()["data"]:
             scores[row["cve"]] = float(row["epss"])  # rem the API sends nums as strings
     return scores
+
+
+def parse_cvss(cve_record):
+    #Pull one CVSS base score out of an NVD CVE record, or None if it has none"
+    metrics = cve_record.get("metrics", {})
+    for version in ("cvssMetricV31", "cvssMetricV30", "cvssMetricV40", "cvssMetricV2"):
+        entries = metrics.get(version, [])
+        if not entries:
+            continue
+        primary = [entry for entry in entries if entry.get("type") == "Primary"]
+        chosen = primary[0] if primary else entries[0]
+        return chosen["cvssData"]["baseScore"]
+    return None
+
+
+NVD_URL = "https://services.nvd.nist.gov/rest/json/cves/2.0"
+CVSS_CACHE = "cache/cvss.json"
+
+# NVD allows 5 requests per 30 seconds without an API key and 50 with one.
+NVD_API_KEY = os.environ.get("NVD_API_KEY")
+NVD_DELAY = 0.7 if NVD_API_KEY else 6.5
+
+
+def nvd_get(params):
+    #Makes one NVD request. If NVD says we are going too fast, wait and retry."""
+    headers = {"apiKey": NVD_API_KEY} if NVD_API_KEY else {}
+    for attempt in range(3):
+        response = requests.get(NVD_URL, params=params, headers=headers, timeout=60)
+        if response.status_code not in (403, 429, 503):
+            break
+        print("  NVD is rate limiting, waiting 30 seconds...")
+        time.sleep(30)
+    if not response.ok:
+        # NVD explains errors in a "message" header (e.g. a bad API key comes back as 404 "Invalid apiKey.")
+        reason = response.headers.get("message", "no message from NVD")
+        raise requests.HTTPError(f"NVD returned {response.status_code} for {params}: {reason}", response=response)
+    return response.json()
+
+
+def load_cache():
+    if os.path.exists(CVSS_CACHE):
+        with open(CVSS_CACHE) as handle:
+            return json.load(handle)
+    return {}
+
+
+def save_cache(cache):
+    os.makedirs(os.path.dirname(CVSS_CACHE), exist_ok=True)
+    with open(CVSS_CACHE, "w") as handle:
+        json.dump(cache, handle, indent=1, sort_keys=True)
+
+
+def fetch_cvss(cves):
+    # this jwil returns {cve_id: cvss_score_or_None}. it will only ask NVD for CVEs not in the cache."""
+    cache = load_cache()
+    missing = [cve for cve in cves if cve not in cache]
+    for number, cve in enumerate(missing, start=1):
+        print(f"  NVD {number}/{len(missing)}: {cve}")
+        found = nvd_get({"cveId": cve})["vulnerabilities"]
+        cache[cve] = parse_cvss(found[0]["cve"]) if found else None
+        save_cache(cache)
+        time.sleep(NVD_DELAY)
+    return {cve: cache[cve] for cve in cves}
