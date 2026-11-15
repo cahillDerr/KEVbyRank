@@ -1,0 +1,174 @@
+rank,cve,package,version,tier,tier_label,in_kev,ransomware,epss,cvss,severity,fix
+1,CVE-2023-4863,pillow,5.4.1,1,Known exploited (KEV),True,False,0.99979,8.8,High,10.0.1
+2,CVE-2019-11358,django,2.1.5,2,Likely exploited (EPSS),False,False,0.8682,6.1,Medium,"2.1.9, 2.2.2"
+3,CVE-2023-0286,cryptography,2.5,2,Likely exploited (EPSS),False,False,0.68407,7.4,High,39.0.1
+4,CVE-2020-7471,django,2.1.5,2,Likely exploited (EPSS),False,False,0.65575,9.8,Critical,"1.11.28, 2.2.10, 3.0.3"
+5,CVE-2019-14322,werkzeug,0.14.1,2,Likely exploited (EPSS),False,False,0.55803,7.5,High,0.15.5
+6,CVE-2019-19844,django,2.1.5,2,Likely exploited (EPSS),False,False,0.53561,9.8,Critical,"1.11.27, 2.2.9, 3.0.1"
+7,CVE-2019-14234,django,2.1.5,2,Likely exploited (EPSS),False,False,0.47694,9.8,Critical,"1.11.23, 2.1.11, 2.2.4"
+8,CVE-2025-57833,django,2.1.5,2,Likely exploited (EPSS),False,False,0.28271,8.1,High,"4.2.24, 5.1.12, 5.2.6"
+9,CVE-2019-6446,numpy,1.16.0,2,Likely exploited (EPSS),False,False,0.27266,9.8,Critical,1.16.1
+10,CVE-2025-64459,django,2.1.5,2,Likely exploited (EPSS),False,False,0.19257,9.1,Critical,"4.2.26, 5.1.14, 5.2.8"
+11,CVE-2022-29361,werkzeug,0.14.1,3,"Severe, exploitation unlikely",False,False,0.08067,9.8,Critical,2.1.1
+12,CVE-2020-14343,pyyaml,3.13,3,"Severe, exploitation unlikely",False,False,0.0624,9.8,Critical,5.4
+13,CVE-2017-18342,pyyaml,3.13,3,"Severe, exploitation unlikely",False,False,0.0557,9.8,Critical,5.1
+14,CVE-2019-6975,django,2.1.5,3,"Severe, exploitation unlikely",False,False,0.05063,7.5,High,"1.11.19, 2.0.12, 2.1.7"
+15,CVE-2021-27922,pillow,5.4.1,3,"Severe, exploitation unlikely",False,False,0.04851,7.5,High,8.1.1
+16,CVE-2020-5311,pillow,5.4.1,3,"Severe, exploitation unlikely",False,False,0.04048,9.8,Critical,6.2.2
+17,CVE-2020-5312,pillow,5.4.1,3,"Severe, exploitation unlikely",False,False,0.0369,9.8,Critical,6.2.2
+18,CVE-2019-10906,jinja2,2.10,3,"Severe, exploitation unlikely",False,False,0.03603,8.6,High,2.10.1
+19,CVE-2021-23727,celery,4.2.1,3,"Severe, exploitation unlikely",False,False,0.03598,7.5,High,5.2.2
+20,CVE-2022-22817,pillow,5.4.1,3,"Severe, exploitation unlikely",False,False,0.03584,9.8,Critical,9.0.0
+21,CVE-2019-14232,django,2.1.5,3,"Severe, exploitation unlikely",False,False,0.03531,7.5,High,"1.11.23, 2.1.11, 2.2.4"
+22,CVE-2019-7164,sqlalchemy,1.2.17,3,"Severe, exploitation unlikely",False,False,0.03496,9.8,Critical,1.3.0b3
+23,CVE-2024-34069,werkzeug,0.14.1,3,"Severe, exploitation unlikely",False,False,0.03397,7.5,High,3.0.3
+24,CVE-2021-23437,pillow,5.4.1,3,"Severe, exploitation unlikely",False,False,0.0324,7.5,High,8.3.2
+25,CVE-2021-34552,pillow,5.4.1,3,"Severe, exploitation unlikely",False,False,0.03188,9.8,Critical,8.3.0
+26,CVE-2019-14233,django,2.1.5,3,"Severe, exploitation unlikely",False,False,0.03172,7.5,High,"1.11.23, 2.1.11, 2.2.4"
+27,CVE-2021-27921,pillow,5.4.1,3,"Severe, exploitation unlikely",False,False,0.0317,7.5,High,8.1.1
+28,CVE-2019-16865,pillow,5.4.1,3,"Severe, exploitation unlikely",False,False,0.03128,7.5,High,6.2.0
+29,CVE-2019-14235,django,2.1.5,3,"Severe, exploitation unlikely",False,False,0.03073,7.5,High,"1.11.23, 2.1.11, 2.2.4"
+30,CVE-2021-27923,pillow,5.4.1,3,"Severe, exploitation unlikely",False,False,0.03045,7.5,High,8.1.1
+31,CVE-2024-1135,gunicorn,19.9.0,3,"Severe, exploitation unlikely",False,False,0.02996,7.5,High,22.0.0
+32,CVE-2021-25287,pillow,5.4.1,3,"Severe, exploitation unlikely",False,False,0.02931,9.1,Critical,8.2.0
+33,CVE-2026-21441,urllib3,1.24.1,3,"Severe, exploitation unlikely",False,False,0.02922,7.5,High,2.6.3
+34,CVE-2019-11324,urllib3,1.24.1,3,"Severe, exploitation unlikely",False,False,0.02915,7.5,High,1.24.2
+35,CVE-2022-24303,pillow,5.4.1,3,"Severe, exploitation unlikely",False,False,0.02691,9.1,Critical,9.0.1
+36,CVE-2021-43818,lxml,4.3.0,3,"Severe, exploitation unlikely",False,False,0.02663,7.1,High,4.6.5
+37,CVE-2020-5313,pillow,5.4.1,3,"Severe, exploitation unlikely",False,False,0.02644,7.1,High,6.2.2
+38,CVE-2021-28676,pillow,5.4.1,3,"Severe, exploitation unlikely",False,False,0.02501,7.5,High,8.2.0
+39,CVE-2020-11538,pillow,5.4.1,3,"Severe, exploitation unlikely",False,False,0.02476,8.1,High,7.1.0
+40,CVE-2021-28677,pillow,5.4.1,3,"Severe, exploitation unlikely",False,False,0.02469,7.5,High,8.2.0
+41,CVE-2022-2309,lxml,4.3.0,3,"Severe, exploitation unlikely",False,False,0.02448,7.5,High,4.9.1
+42,CVE-2021-25288,pillow,5.4.1,3,"Severe, exploitation unlikely",False,False,0.02388,9.1,Critical,8.2.0
+43,CVE-2021-25290,pillow,5.4.1,3,"Severe, exploitation unlikely",False,False,0.02372,7.5,High,8.1.1
+44,CVE-2021-25289,pillow,5.4.1,3,"Severe, exploitation unlikely",False,False,0.02345,9.8,Critical,8.1.1
+45,CVE-2019-19911,pillow,5.4.1,3,"Severe, exploitation unlikely",False,False,0.02236,7.5,High,6.2.2
+46,CVE-2020-5310,pillow,5.4.1,3,"Severe, exploitation unlikely",False,False,0.01975,8.8,High,6.2.2
+47,CVE-2019-14806,werkzeug,0.14.1,3,"Severe, exploitation unlikely",False,False,0.01909,7.5,High,0.15.3
+48,CVE-2025-64458,django,2.1.5,3,"Severe, exploitation unlikely",False,False,0.01909,7.5,High,"4.2.26, 5.1.14, 5.2.8"
+49,CVE-2020-35654,pillow,5.4.1,3,"Severe, exploitation unlikely",False,False,0.01867,8.8,High,8.1.0
+50,CVE-2019-7548,sqlalchemy,1.2.17,3,"Severe, exploitation unlikely",False,False,0.01777,7.8,High,1.2.18
+51,CVE-2023-50447,pillow,5.4.1,3,"Severe, exploitation unlikely",False,False,0.01703,8.1,High,10.2.0
+52,CVE-2020-35653,pillow,5.4.1,3,"Severe, exploitation unlikely",False,False,0.0164,7.1,High,8.1.0
+53,CVE-2022-45198,pillow,5.4.1,3,"Severe, exploitation unlikely",False,False,0.01627,7.5,High,9.2.0
+54,CVE-2021-25293,pillow,5.4.1,3,"Severe, exploitation unlikely",False,False,0.01601,7.5,High,8.1.1
+55,CVE-2023-25577,werkzeug,0.14.1,3,"Severe, exploitation unlikely",False,False,0.0142,7.5,High,2.2.3
+56,CVE-2021-25291,pillow,5.4.1,3,"Severe, exploitation unlikely",False,False,0.01398,7.5,High,8.1.1
+57,CVE-2023-43804,urllib3,1.24.1,3,"Severe, exploitation unlikely",False,False,0.0136,8.1,High,"1.26.17, 2.0.6"
+58,CVE-2023-44271,pillow,5.4.1,3,"Severe, exploitation unlikely",False,False,0.0136,7.5,High,10.0.0
+59,CVE-2026-112900,pillow,5.4.1,3,"Severe, exploitation unlikely",False,False,0.01303,9.8,Critical,13.0.0
+60,CVE-2023-46136,werkzeug,0.14.1,3,"Severe, exploitation unlikely",False,False,0.01288,7.5,High,"2.3.8, 3.0.1"
+61,CVE-2023-30861,flask,1.0.2,3,"Severe, exploitation unlikely",False,False,0.0125,7.5,High,"2.2.5, 2.3.2"
+62,CVE-2020-10379,pillow,5.4.1,3,"Severe, exploitation unlikely",False,False,0.01157,7.8,High,7.1.0
+63,CVE-2026-15307,django,2.1.5,3,"Severe, exploitation unlikely",False,False,0.01134,8.8,High,"5.2.17, 6.0.8"
+64,CVE-2023-50782,cryptography,2.5,3,"Severe, exploitation unlikely",False,False,0.01118,7.5,High,42.0.0
+65,CVE-2026-112393,pillow,5.4.1,3,"Severe, exploitation unlikely",False,False,0.01019,9.8,Critical,13.0.0
+66,CVE-2026-112403,pillow,5.4.1,3,"Severe, exploitation unlikely",False,False,0.00945,9.8,Critical,13.0.0
+67,CVE-2022-36359,django,2.1.5,3,"Severe, exploitation unlikely",False,False,0.00935,8.8,High,"3.2.15, 4.0.7"
+68,CVE-2024-26130,cryptography,2.5,3,"Severe, exploitation unlikely",False,False,0.00831,7.5,High,42.0.4
+69,CVE-2024-6827,gunicorn,19.9.0,3,"Severe, exploitation unlikely",False,False,0.00806,7.5,High,22.0.0
+70,CVE-2025-66418,urllib3,1.24.1,3,"Severe, exploitation unlikely",False,False,0.00731,7.5,High,2.6.0
+71,CVE-2025-66471,urllib3,1.24.1,3,"Severe, exploitation unlikely",False,False,0.00731,7.5,High,2.6.0
+72,CVE-2026-112398,pillow,5.4.1,3,"Severe, exploitation unlikely",False,False,0.00696,9.8,Critical,13.0.0
+73,CVE-2026-112401,pillow,5.4.1,3,"Severe, exploitation unlikely",False,False,0.00649,7.5,High,13.0.0
+74,CVE-2026-112902,pillow,5.4.1,3,"Severe, exploitation unlikely",False,False,0.00613,9.1,Critical,13.0.0
+75,CVE-2026-96640,pillow,5.4.1,3,"Severe, exploitation unlikely",False,False,0.00604,7.5,High,13.0.0
+76,CVE-2026-112402,pillow,5.4.1,3,"Severe, exploitation unlikely",False,False,0.00594,7.5,High,13.0.0
+77,CVE-2026-112894,pillow,5.4.1,3,"Severe, exploitation unlikely",False,False,0.00594,7.5,High,13.0.0
+78,CVE-2026-112895,pillow,5.4.1,3,"Severe, exploitation unlikely",False,False,0.00594,7.5,High,13.0.0
+79,CVE-2026-112392,pillow,5.4.1,3,"Severe, exploitation unlikely",False,False,0.00593,7.5,High,13.0.0
+80,CVE-2026-112391,pillow,5.4.1,3,"Severe, exploitation unlikely",False,False,0.00581,7.5,High,13.0.0
+81,CVE-2026-112397,pillow,5.4.1,3,"Severe, exploitation unlikely",False,False,0.00573,7.5,High,13.0.0
+82,CVE-2026-112406,pillow,5.4.1,3,"Severe, exploitation unlikely",False,False,0.00573,7.5,High,13.0.0
+83,CVE-2026-112394,pillow,5.4.1,3,"Severe, exploitation unlikely",False,False,0.00555,8.2,High,13.0.0
+84,CVE-2026-112901,pillow,5.4.1,3,"Severe, exploitation unlikely",False,False,0.00532,7.5,High,13.0.0
+85,CVE-2024-56326,jinja2,2.10,3,"Severe, exploitation unlikely",False,False,0.00522,7.8,High,3.1.5
+86,CVE-2026-55379,pillow,5.4.1,3,"Severe, exploitation unlikely",False,False,0.00522,7.5,High,12.3.0
+87,CVE-2026-54058,pillow,5.4.1,3,"Severe, exploitation unlikely",False,False,0.00521,9.1,Critical,12.3.0
+88,CVE-2026-55380,pillow,5.4.1,3,"Severe, exploitation unlikely",False,False,0.00518,7.5,High,12.3.0
+89,CVE-2025-27516,jinja2,2.10,3,"Severe, exploitation unlikely",False,False,0.00507,8.8,High,3.1.6
+90,CVE-2026-112892,pillow,5.4.1,3,"Severe, exploitation unlikely",False,False,0.00503,7.5,High,13.0.0
+91,CVE-2026-112896,pillow,5.4.1,3,"Severe, exploitation unlikely",False,False,0.00475,7.1,High,13.0.0
+92,CVE-2026-128067,pillow,5.4.1,3,"Severe, exploitation unlikely",False,False,0.00451,8.4,High,13.0.0
+93,CVE-2026-59197,pillow,5.4.1,3,"Severe, exploitation unlikely",False,False,0.00445,8.2,High,12.3.0
+94,CVE-2026-54060,pillow,5.4.1,3,"Severe, exploitation unlikely",False,False,0.00418,7.5,High,12.3.0
+95,CVE-2026-54059,pillow,5.4.1,3,"Severe, exploitation unlikely",False,False,0.0041,7.5,High,12.3.0
+96,CVE-2026-59199,pillow,5.4.1,3,"Severe, exploitation unlikely",False,False,0.00385,7.5,High,12.3.0
+97,CVE-2026-59200,pillow,5.4.1,3,"Severe, exploitation unlikely",False,False,0.00385,7.5,High,12.3.0
+98,CVE-2026-59205,pillow,5.4.1,3,"Severe, exploitation unlikely",False,False,0.00385,7.5,High,12.3.0
+99,CVE-2026-96644,pillow,5.4.1,3,"Severe, exploitation unlikely",False,False,0.00384,8.1,High,13.0.0
+100,CVE-2026-128066,pillow,5.4.1,3,"Severe, exploitation unlikely",False,False,0.00377,8.7,High,13.0.0
+101,CVE-2026-97689,urllib3,1.24.1,3,"Severe, exploitation unlikely",False,False,0.00335,7.5,High,2.8.0
+102,CVE-2026-41066,lxml,4.3.0,3,"Severe, exploitation unlikely",False,False,0.00324,7.5,High,6.1.0
+103,CVE-2026-59198,pillow,5.4.1,3,"Severe, exploitation unlikely",False,False,0.00313,7.5,High,12.3.0
+104,CVE-2026-69249,cryptography,2.5,3,"Severe, exploitation unlikely",False,False,0.00262,8.7,High,49.0.0
+105,CVE-2021-28957,lxml,4.3.0,4,Routine,False,False,0.04035,6.1,Medium,4.6.3
+106,CVE-2020-27783,lxml,4.3.0,4,Routine,False,False,0.03982,6.1,Medium,4.6.2
+107,CVE-2020-28493,jinja2,2.10,4,Routine,False,False,0.03589,5.3,Medium,2.11.3
+108,CVE-2024-0727,cryptography,2.5,4,Routine,False,False,0.03187,5.5,Medium,42.0.2
+109,CVE-2023-32681,requests,2.21.0,4,Routine,False,False,0.02974,6.1,Medium,2.31.0
+110,CVE-2022-22815,pillow,5.4.1,4,Routine,False,False,0.02771,6.5,Medium,9.0.0
+111,CVE-2021-33203,django,2.1.5,4,Routine,False,False,0.02737,4.9,Medium,"2.2.24, 3.1.12, 3.2.4"
+112,CVE-2020-25659,cryptography,2.5,4,Routine,False,False,0.02463,5.9,Medium,3.2.1
+113,CVE-2019-12308,django,2.1.5,4,Routine,False,False,0.02402,6.1,Medium,"1.11.21, 2.1.9, 2.2.2"
+114,CVE-2020-26137,urllib3,1.24.1,4,Routine,False,False,0.02269,6.5,Medium,1.25.9
+115,CVE-2022-24302,paramiko,2.4.2,4,Routine,False,False,0.0208,5.9,Medium,"2.9.3, 2.10.1"
+116,CVE-2019-11236,urllib3,1.24.1,4,Routine,False,False,0.02073,6.1,Medium,1.24.3
+117,CVE-2022-22816,pillow,5.4.1,4,Routine,False,False,0.02064,6.5,Medium,9.0.0
+118,CVE-2021-25292,pillow,5.4.1,4,Routine,False,False,0.01727,6.5,Medium,8.1.1
+119,CVE-2019-12781,django,2.1.5,4,Routine,False,False,0.01711,5.3,Medium,"1.11.22, 2.1.10, 2.2.3"
+120,CVE-2021-34141,numpy,1.16.0,4,Routine,False,False,0.01679,5.3,Medium,1.22
+121,CVE-2019-19118,django,2.1.5,4,Routine,False,False,0.0167,6.5,Medium,"2.1.15, 2.2.8"
+122,CVE-2020-35655,pillow,5.4.1,4,Routine,False,False,0.01663,5.4,Medium,8.1.0
+123,CVE-2021-33430,numpy,1.16.0,4,Routine,False,False,0.01529,5.3,Medium,1.21
+124,CVE-2020-10177,pillow,5.4.1,4,Routine,False,False,0.0148,5.5,Medium,7.1.0
+125,CVE-2020-10994,pillow,5.4.1,4,Routine,False,False,0.01432,5.5,Medium,7.0.0
+126,CVE-2023-23931,cryptography,2.5,4,Routine,False,False,0.01301,6.5,Medium,39.0.1
+127,CVE-2021-41495,numpy,1.16.0,4,Routine,False,False,0.01241,5.3,Medium,1.19.1
+128,CVE-2020-10378,pillow,5.4.1,4,Routine,False,False,0.01143,5.5,Medium,7.1.0
+129,CVE-2024-37891,urllib3,1.24.1,4,Routine,False,False,0.01141,6.5,Medium,"1.26.19, 2.2.2"
+130,CVE-2026-15830,django,2.1.5,4,Routine,False,False,0.01113,5.3,Medium,"5.2.17, 6.0.8, 6.1.1"
+131,CVE-2024-47081,requests,2.21.0,4,Routine,False,False,0.01022,5.3,Medium,2.32.4
+132,CVE-2024-28219,pillow,5.4.1,4,Routine,False,False,0.00997,5.9,Medium,10.3.0
+133,CVE-2024-34064,jinja2,2.10,4,Routine,False,False,0.00979,5.4,Medium,3.1.4
+134,CVE-2021-28675,pillow,5.4.1,4,Routine,False,False,0.00956,5.5,Medium,8.2.0
+135,CVE-2024-22195,jinja2,2.10,4,Routine,False,False,0.00892,6.1,Medium,3.1.3
+136,CVE-2025-48432,django,2.1.5,4,Routine,False,False,0.00807,5.3,Medium,"4.2.22, 5.1.10, 5.2.2"
+137,CVE-2024-45231,django,2.1.5,4,Routine,False,False,0.00788,5.3,Medium,"4.2.16, 5.0.9, 5.1.1"
+138,CVE-2024-49766,werkzeug,0.14.1,4,Routine,False,False,0.00776,5.3,Medium,3.0.6
+139,CVE-2021-28678,pillow,5.4.1,4,Routine,False,False,0.00732,5.5,Medium,8.2.0
+140,CVE-2026-27199,werkzeug,0.14.1,4,Routine,False,False,0.00631,5.3,Medium,3.1.6
+141,CVE-2023-45803,urllib3,1.24.1,4,Routine,False,False,0.00593,4.2,Medium,"1.26.18, 2.0.7"
+142,CVE-2018-25091,urllib3,1.24.1,4,Routine,False,False,0.00589,6.1,Medium,1.24.2
+143,CVE-2025-66221,werkzeug,0.14.1,4,Routine,False,False,0.00547,5.3,Medium,3.1.4
+144,CVE-2026-112899,pillow,5.4.1,4,Routine,False,False,0.00547,5.3,Medium,13.0.0
+145,CVE-2026-53877,django,2.1.5,4,Routine,False,False,0.00527,4.8,Medium,"5.2.16, 6.0.7"
+146,CVE-2023-23934,werkzeug,0.14.1,4,Routine,False,False,0.00507,3.5,Low,2.2.3
+147,CVE-2026-112897,pillow,5.4.1,4,Routine,False,False,0.00479,6.2,Medium,13.0.0
+148,CVE-2026-21860,werkzeug,0.14.1,4,Routine,False,False,0.00475,5.3,Medium,3.1.5
+149,CVE-2025-50181,urllib3,1.24.1,4,Routine,False,False,0.00474,6.1,Medium,2.5.0
+150,CVE-2026-48588,django,2.1.5,4,Routine,False,False,0.00429,5.3,Medium,"5.2.16, 6.0.7"
+151,CVE-2026-27205,flask,1.0.2,4,Routine,False,False,0.004,4.3,Medium,3.1.3
+152,CVE-2021-41496,numpy,1.16.0,4,Routine,False,False,0.00396,5.5,Medium,1.19.0
+153,CVE-2026-26007,cryptography,2.5,4,Routine,False,False,0.00384,6.5,Medium,46.0.5
+154,CVE-2026-96637,pillow,5.4.1,4,Routine,False,False,0.00373,6.5,Medium,13.0.0
+155,CVE-2026-102598,werkzeug,0.14.1,4,Routine,False,False,0.0037,6.3,Medium,3.1.9
+156,CVE-2026-48587,django,2.1.5,4,Routine,False,False,0.00367,5.3,Medium,"5.2.15, 6.0.6"
+157,CVE-2026-96636,pillow,5.4.1,4,Routine,False,False,0.00364,6.5,Medium,13.0.0
+158,CVE-2026-96641,pillow,5.4.1,4,Routine,False,False,0.00364,6.5,Medium,13.0.0
+159,CVE-2026-96642,pillow,5.4.1,4,Routine,False,False,0.00345,6.5,Medium,13.0.0
+160,CVE-2024-35195,requests,2.21.0,4,Routine,False,False,0.0034,5.6,Medium,2.32.0
+161,CVE-2026-44431,urllib3,1.24.1,4,Routine,False,False,0.00331,5.3,Medium,2.7.0
+162,CVE-2026-53878,django,2.1.5,4,Routine,False,False,0.00327,6.1,Medium,"5.2.16, 6.0.7"
+163,CVE-2026-27448,pyopenssl,19.0.0,4,Routine,False,False,0.00282,5.3,Medium,26.0.0
+164,CVE-2026-8404,django,2.1.5,4,Routine,False,False,0.00274,5.3,Medium,"5.2.15, 6.0.6"
+165,CVE-2026-6873,django,2.1.5,4,Routine,False,False,0.00245,4.3,Medium,"5.2.15, 6.0.6"
+166,CVE-2026-69248,cryptography,2.5,4,Routine,False,False,0.00244,6.9,Medium,49.0.0
+167,CVE-2026-34073,cryptography,2.5,4,Routine,False,False,0.00227,5.3,Medium,46.0.6
+168,CVE-2026-25645,requests,2.21.0,4,Routine,False,False,0.00194,5.5,Medium,2.33.0
+169,CVE-2026-55798,pillow,5.4.1,4,Routine,False,False,0.00179,4.5,Medium,12.3.0
+170,CVE-2026-42310,pillow,5.4.1,4,Routine,False,False,0.00171,5.5,Medium,12.2.0
+171,CVE-2026-42308,pillow,5.4.1,4,Routine,False,False,0.00114,5.5,Medium,12.2.0
+172,CVE-2026-44405,paramiko,2.4.2,4,Routine,False,False,0.00114,3.4,Low,5.0.0
+173,CVE-2023-5129,pillow,5.4.1,4,Routine,False,False,,,Unknown,10.0.1
