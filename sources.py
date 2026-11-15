@@ -54,19 +54,19 @@ NVD_DELAY = 0.7 if NVD_API_KEY else 6.5
 
 
 def nvd_get(params):
-    #Makes one NVD request. If NVD says we are going too fast, wait and retry."""
+    #Make one NVD request. If NVD is slow, silent or rate limiting, wait and retry
     headers = {"apiKey": NVD_API_KEY} if NVD_API_KEY else {}
-    for attempt in range(3):
-        response = requests.get(NVD_URL, params=params, headers=headers, timeout=60)
-        if response.status_code not in (403, 429, 503):
-            break
-        print("  NVD is rate limiting, waiting 30 seconds...")
+    for attempt in range(5):
+        try:
+            response = requests.get(NVD_URL, params=params, headers=headers, timeout=60)
+            if response.status_code not in (403, 429, 503):
+                response.raise_for_status()
+                return response.json()
+            print("  NVD is rate limiting, waiting 30 seconds...")
+        except (requests.exceptions.Timeout, requests.exceptions.ConnectionError):
+            print("  NVD did not answer in time, waiting 30 seconds...")
         time.sleep(30)
-    if not response.ok:
-        # NVD explains errors in a "message" header (e.g. a bad API key comes back as 404 "Invalid apiKey.")
-        reason = response.headers.get("message", "no message from NVD")
-        raise requests.HTTPError(f"NVD returned {response.status_code} for {params}: {reason}", response=response)
-    return response.json()
+    raise RuntimeError("NVD gave no usable answer after 5 tries. Run the command again later.")
 
 
 def load_cache():
