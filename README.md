@@ -3,8 +3,6 @@
 
 Rank a list of CVEs by evidence of real world exploitation instead of CVSS severity alone.
 
-
-
 **Finding on a sample scan:** Of 173 findings in a 2019 era Python stack, a "patch every High and Critical" policy flags 103. KEVRank flags 10 as urgent. One of those 10 is a Medium (CVSS 6.1) with an 87% chance of exploitation, which the CVSS policy would never reach. The only finding known to be exploited, CVE-2023-4863, is rated High, not Critical.
 
 ![CVSS score against EPSS probability for each finding](results/cvss_vs_epss.png)
@@ -12,7 +10,7 @@ Rank a list of CVEs by evidence of real world exploitation instead of CVSS sever
 
 ## Why
 
-Most of the patch queues are sorted by CVSS. CVSS measures how bad a vulnerability would be if it were exploited. It does not measure whether anyone is exploiting it. KEVRank adds two signals that do.
+Most of the patch queues are sorted by CVSS. CVSS measures how bad a vulnerability would be if it were exploited. It does not measure whether anyone is exploiting it. Kevbyrank adds two signals that do.
 
 | Signal | Source | What it says |
 | --- | --- | --- |
@@ -20,7 +18,7 @@ Most of the patch queues are sorted by CVSS. CVSS measures how bad a vulnerabili
 | EPSS | FIRST Exploit Prediction Scoring System | Estimated probability of exploitation in the next 30 days |
 | CVSS | NIST National Vulnerability Database | Severity if exploited, from 0 to 10 |
 
-US federal policy has moved the same way. CISA's Binding Operational Directive 26-04 (June 2026) tells federal civilian agencies to set patch deadlines by risk, with KEV listing as one of four risk factors.
+US federal policy has moved the same way. CISA's Binding Operational Directive 26-04 (June 2026) tells federal civilian agencies to set patch deadlines by risk with KEV listing as one of four risk factors.
 
 ## How it ranks
 
@@ -70,18 +68,18 @@ Pillow alone accounts for 80 of the 173 findings, so one upgrade closes 46% of t
 
 ## Limitations
 
-- EPSS is a model's estimate, not a fact, and it changes daily. These results are a snapshot.
+- EPSS is a models estimate and not a solid fact and it changes daily. These results are a snapshot.
 - KEV lists only what CISA has confirmed. A CVE missing from KEV may still be exploited.
 - - The 0.10 EPSS line is my choice, not some standard. I tested 0.05, 0.10 and 0.20 on this scan: the urgent list was 14, 10 and 9 findings. No finding scored between 0.08 and 0.19, so 0.10 sits in a natural gap. It can be changed with `--epss-threshold`.
 - The tool knows nothing about the asset. BOD 26-04 also asks whether a system is publicly exposed. KEVRank only sees the CVE.
 - CVSS scores come from NVD, preferring v3.1. A few CVEs have only v2 or v4 scores, which are not exactly comparable, and some have none.
-- pip-audit reports that a package version is affected. It does not show that the vulnerable code is reachable in a given application.
+- pip audit just reports that a package version is affected. It actually does not show that the vulnerable code is reachable in a given application.
 - Advisories without a CVE ID are skipped.
-- This is one scan of one stack. The percentages will differ in other environments.
+- This is just one scan of one stack. The percentages will differ in other environments.
 
 ## How this was built
 
-Built over 7 days in November 2026 as a learning project. The project was created alongside Claude and built one step at a time. I had claude help debug, explain new concepts, create tests, and prompted it to write each piece against the live data sources, review every line, and test each piece against the live KEV, EPSS and NVD services and reviewed every line. 
+Built over 7 days in November 2026 as a learning project. The project was created alongside Claude and built one step at a time. I had claude help debug, explain new concepts, create tests, and prompted it to write certain pieces against the live data sources, review every line, and test each piece against the live KEV, EPSS and NVD services and reviewed every line of those results. 
 
 Two things came from running it for real. NVD rate limited my requests and then timed out mid run, which crashed the first version; the retry logic was extended to cover timeouts and dropped connections, and the local cache meant no completed lookups were lost. The EPSS threshold is my decision, made after testing three values on this scan (see limitations).
 
