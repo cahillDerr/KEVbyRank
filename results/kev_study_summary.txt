@@ -1,0 +1,5 @@
+KEV entries: 1781 (1781 with a CVSS score in NVD)
+Not CVSS Critical: 1141 of 1781 (64%)
+Below CVSS High: 203 of 1781 (11%)
+EPSS under 10% today: 437 of 1781 (25%)
+Linked to ransomware campaigns: 361

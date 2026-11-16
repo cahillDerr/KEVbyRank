@@ -83,7 +83,7 @@ def save_cache(cache):
 
 
 def fetch_cvss(cves):
-    # this jwil returns {cve_id: cvss_score_or_None}. it will only ask NVD for CVEs not in the cache."""
+    # this jwil returns {cve_id: cvss_score_or_None}. it will only ask NVD for CVEs not in the cache
     cache = load_cache()
     missing = [cve for cve in cves if cve not in cache]
     for number, cve in enumerate(missing, start=1):
@@ -93,3 +93,21 @@ def fetch_cvss(cves):
         save_cache(cache)
         time.sleep(NVD_DELAY)
     return {cve: cache[cve] for cve in cves}
+
+def fetch_kev_cvss():
+    # should return {cve_id: cvss_score_or_None} for every CVE that NVD marks as in KEV.
+
+    #NVDs hasKev filter returns them all in pages of up to 2k, so this takes one or two requests instead of one request 
+    # per CVE.
+    
+    scores = {}
+    start = 0
+    while True:
+        page = nvd_get(f"hasKev&resultsPerPage=2000&startIndex={start}")
+        for item in page["vulnerabilities"]:
+            scores[item["cve"]["id"]] = parse_cvss(item["cve"])
+        start += len(page["vulnerabilities"])
+        if not page["vulnerabilities"] or start >= page["totalResults"]:
+            break
+        time.sleep(NVD_DELAY)
+    return scores
