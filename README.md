@@ -8,7 +8,7 @@ Rank a list of CVEs by evidence of real world exploitation instead of CVSS sever
 **Finding on a sample scan:** Of 173 findings in a 2019 era Python stack, a "patch every High and Critical" policy flags 103. KEVRank flags 10 as urgent. One of those 10 is a Medium (CVSS 6.1) with an 87% chance of exploitation, which the CVSS policy would never reach. The only finding known to be exploited, CVE-2023-4863, is rated High, not Critical.
 
 ![CVSS score against EPSS probability for each finding](results/cvss_vs_epss.png)
-![alt text](image.png)
+
 
 ## Why
 
@@ -84,3 +84,18 @@ Pillow alone accounts for 80 of the 173 findings, so one upgrade closes 46% of t
 Built over 7 days in November 2026 as a learning project. The project was created alongside Claude and built one step at a time. I had claude help debug, explain new concepts, create tests, and prompted it to write each piece against the live data sources, review every line, and test each piece against the live KEV, EPSS and NVD services and reviewed every line. 
 
 Two things came from running it for real. NVD rate limited my requests and then timed out mid run, which crashed the first version; the retry logic was extended to cover timeouts and dropped connections, and the local cache meant no completed lookups were lost. The EPSS threshold is my decision, made after testing three values on this scan (see limitations).
+
+
+## KEV catalog study
+
+The same question asked of every CVE in CISA's catalog (1,781 entries on November 16, 2026):
+
+- KEV entries: 1781 (1781 with a CVSS score in NVD)
+- Not CVSS Critical: 1141 of 1781 (64%)
+- Below CVSS High: 203 of 1781 (11%)
+- EPSS under 10% today: 437 of 1781 (25%)
+- Linked to ransomware campaigns: 361
+
+![CVSS severity of KEV entries](results/kev_severity.png)
+
+A queue that patches only CVSS Critical findings first would delay 64% of the vulnerabilities attackers are known to have used.
